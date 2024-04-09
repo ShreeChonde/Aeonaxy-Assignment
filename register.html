@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register to Dribbble</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="hero-section">
+        <h1>dribbble</h1>
+        <p>
+          Discover the world's top <br />
+          Designers & Creatives.
+        </p>
+        <img src="images/hero-image.png" alt="" /><br />
+        <span>Art by <u>Peter Tarka </u></span>
+      </div>
+      <div class="form-section">
+        <form action="#" method="post">
+          <p>Already a member? <a href="index.html">Sign In</a></p>
+          <h2>Sign up to Dribbble</h2>
+          <label for="name">Name</label>
+          <input
+            type="text"
+            name="name"
+            placeholder="Name"
+            id="name"
+            required
+          />
+          <label for="username">UserName</label>
+          <input
+            type="text"
+            name="username"
+            placeholder="Username"
+            id="username"
+            required
+          />
+          <label for="emale">Email</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="account@refero.design"
+            required
+          />
+          <label for="password">Password</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="6+ Characters"
+            required
+          />
+          <input type="checkbox" required /><span
+            >Creating an account means you're okey with our
+            <a href="#">Terms of Services,</a>
+            <a href="#">Privacy Policy,</a> and our default
+            <a href="#">Notification Settings.</a>
+          </span>
+          <br /><br />
+          <input type="submit" value="Create Account" id="registerButton" />
+          <br /><br />
+          <span
+            >This site is protected by reCAPTCHA and Google
+            <a href="#">Privacy Policy</a> and
+            <a href="#">Terms of Services</a>apply.</span
+          >
+        </form>
+      </div>
+    </div>
+    <script>
+      document
+        .getElementById("registerButton")
+        .addEventListener("click", function () {
+          // Get form inputs
+          var name = document.getElementById("name").value;
+          var username = document.getElementById("username").value;
+          var email = document.getElementById("email").value;
+          var password = document.getElementById("password").value;
+
+          // Validate inputs (for simplicity, just checking if they are not empty)
+          if (
+            name.trim() === "" ||
+            username.trim() === "" ||
+            email.trim() === "" ||
+            password.trim() === ""
+          ) {
+            return;
+          }
+          // alert("Registration successful!");
+          window.location.href = "profile.html";
+        });
+    </script>
+  </body>
+</html>

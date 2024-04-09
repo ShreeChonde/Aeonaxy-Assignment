@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register to Dribbble</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="hero-section">
+        <h1>dribbble</h1>
+        <p>
+          Discover the world's top <br />
+          Designers & Creatives.
+        </p>
+        <img src="images/hero-image.png" alt="" /><br />
+        <span>Art by <u>Peter Tarka </u></span>
+      </div>
+      <div class="form-section">
+        <form id="login-form">
+          <h2>Login to Dribbble</h2>
+          <label for="username">UserName</label>
+          <input type="text" id="username" placeholder="Username" required />
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Password"
+            required
+          />
+          <br /><br />
+          <input type="submit" value="Login" />
+          <input type="reset" value="Cancel" />
+          <br /><br />
+          <span>Don't have Account? <a href="register.html">Sign Up</a></span
+          ><br />
+          <span>Forgot? <a href="#">Password</a></span>
+        </form>
+      </div>
+    </div>
+    <script>
+      const loginForm = document.getElementById("login-form");
+      loginForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+        if (username === "admin123" && password === "admin") {
+          window.location.href = "home.html";
+        } else {
+          alert("Invalid username or password. Please try again.");
+        }
+      });
+    </script>
+  </body>
+</html>

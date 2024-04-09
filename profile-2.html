@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="css/profile-2.css" />
+  </head>
+  <body>
+    <h1 id="logo">dribbble</h1>
+    <div class="container">
+      <div class="row" id="profileCards">
+        <div class="profile-card" onclick="selectProfile(this)">
+          <img
+            class="profile-image"
+            src="images/profile-1.png"
+            alt="Profile Image 1"
+          />
+          <div class="profile-info">
+            <h3>I'm a designer looking to share my work</h3>
+          </div>
+        </div>
+        <div class="profile-card" onclick="selectProfile(this)">
+          <img
+            class="profile-image"
+            src="images/profile-2.png"
+            alt="Profile Image 2"
+          />
+          <div class="profile-info">
+            <h3>I'm looking to hire a designer</h3>
+          </div>
+        </div>
+        <div class="profile-card" onclick="selectProfile(this)">
+          <img
+            class="profile-image"
+            src="images/profile-3.png"
+            alt="Profile Image 3"
+          />
+          <div class="profile-info">
+            <h3>I'm looking for design inspiration</h3>
+          </div>
+        </div>
+      </div>
+      <input
+        type="submit"
+        value="Finish"
+        onclick="finishProfile()"
+        id="finishButton"
+      />
+    </div>
+
+    <script>
+      let selectedProfile = null; // Variable to store the selected profile card
+
+      // Function to handle selection of profile card
+      function selectProfile(profileCard) {
+        if (selectedProfile) {
+          // Remove 'selected' class from previously selected profile card
+          selectedProfile.classList.remove("selected");
+        }
+
+        // Add 'selected' class to the clicked profile card
+        profileCard.classList.add("selected");
+        selectedProfile = profileCard;
+
+        // Enable the 'Finish' button
+        document.getElementById("finishButton").disabled = false;
+      }
+
+      // Function to handle finishing the profile
+      function finishProfile() {
+        if (selectedProfile) {
+          // Perform actions to finish the profile, such as redirecting to another page
+          // alert("Profile finished! Redirecting to home page...");
+          window.location.href = "home.html";
+          // Here, you can add code to redirect to the home page
+        } else {
+          alert("Please select a profile card before finishing.");
+        }
+      }
+    </script>
+  </body>
+</html>

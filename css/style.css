@@ -1,0 +1,101 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.hero-section {
+  background-color: rgb(245, 214, 120);
+  color: #333;
+  padding: 20px;
+}
+
+.hero-section h1 {
+  font-family: "French Script MT";
+  color: rgb(161, 111, 74);
+}
+
+.hero-section p {
+  color: rgb(108, 48, 17);
+  font-weight: 800;
+  font-size: 25px;
+}
+
+.hero-section img {
+  margin-top: 10%;
+  margin-left: 15%;
+  width: 70%;
+}
+
+.hero-section span {
+  font-size: 9px;
+  font-weight: 600;
+  color: rgb(161, 111, 74);
+}
+
+.form-section {
+  flex: 1;
+  padding: 20px;
+}
+
+.form-section p {
+  margin-left: 50%;
+  margin-top: 0;
+}
+
+.form-section a {
+  text-decoration: none;
+}
+
+span {
+  font-size: 12px;
+}
+
+form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  background-color: #edecec;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+input[type="submit"],
+input[type="reset"] {
+  width: 45%;
+  padding: 10px;
+  background-color: rgb(242, 81, 156);
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+  background-color: rgb(255, 2, 116);
+}
+
+@media only screen and (min-width: 768px) {
+  .container {
+    flex-direction: row;
+  }
+
+  .form-section {
+    padding: 50px;
+  }
+}

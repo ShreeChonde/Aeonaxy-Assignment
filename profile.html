@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="css/profile.css" />
+  </head>
+  <body>
+    <h1 id="logo">dribbble</h1>
+    <div class="container">
+      <h1>Welcome! Lets create your profile</h1>
+      <p>Let others get to know you better! You can do this later</p>
+      <h3>Add an avatar</h3>
+      <div class="profile-image">
+        <img id="preview" src="images/profile-demo.jpg" alt="Profile Image" />
+        <input
+          type="file"
+          accept="image/*"
+          id="image"
+          class="profile-image"
+          onchange="previewImage(event)"
+        />
+        <!-- <p>> Or choose one of our defaults</p> -->
+      </div>
+      <div class="location">
+        <h3>Add your location:</h3>
+        <input type="text" placeholder="Enter a location" id="locationInput" />
+      </div>
+      <input type="submit" value="Next" id="nextButton" /><br />
+      <a href="#"><span>or Press Return</span></a>
+    </div>
+
+    <script>
+      function previewImage(event) {
+        var reader = new FileReader();
+        reader.onload = function () {
+          var output = document.getElementById("preview");
+          output.src = reader.result;
+        };
+        reader.readAsDataURL(event.target.files[0]);
+      }
+      document
+        .getElementById("nextButton")
+        .addEventListener("click", function (event) {
+          var profile = document.getElementById("image").value;
+          var location = document.getElementById("locationInput").value;
+          if (profile.trim() === "") {
+            alert("Please choose profile-image");
+            return;
+          }
+          if (location.trim() === "") {
+            alert("Please enter a location.");
+            return;
+          }
+          window.location.href = "profile-2.html";
+        });
+    </script>
+  </body>
+</html>
